@@ -1,4 +1,4 @@
-**<p align="center">(Ainda em desenvolvimento - NÃO FINALIZADO)</p>**
+**<p align="center">(Ainda em produção - NÃO FINALIZADO)</p>**
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/georgaugusto/solouchuva/85adedbfe8c53a00d70f8e1ff746e8db709dfc8d/public/logoImg.svg" width="600px"/>
@@ -26,7 +26,9 @@ Para ver a **describe**, clique aqui: [SolouChuva Describe](https://github.com/g
 Para ver a **api**, clique aqui: [SolouChuva Rest API](https://github.com/georgaugusto/solouchuva-backend)</br>
 Para ver a **web client**, clique aqui: [SolouChuva Web](https://github.com/georgaugusto/solouchuva-frontend)
 
-Para ver a **aplicação** rodando, clique aqui: [SolouChuva App](https://app.solouchuva.com.br/dashboard)
+Para ver a **aplicação** rodando, clique aqui: [SolouChuva App](https://app.solouchuva.com.br/dashboard) (Ainda em produção, **não finalizado**)
+
+> Obs.: Recuperação de senha e alteração de avatar não estão funcionais no [SolouChuva App](https://app.solouchuva.com.br/dashboard), devido a limitação de recursos para manter a aplicação online.
 
 ## Preview
 
@@ -90,14 +92,14 @@ $ git clone https://github.com/georgaugusto/solouchuva-hardware.git && cd solouc
 ```bash
 # Fork usando a linha de comando oficial do GitHub, caso você não tenha a CLI do GitHub, use o site para fazer isso.
 
-$ gh repo fork georgaugusto/solouchuva-backend
+$ gh repo fork georgaugusto/solouchuva-hardware
 ```
 
 **Siga os passos abaixo**
 
 ```bash
 # Clone sua fork
-$ git clone your-fork-url && cd solouchuva-backend
+$ git clone your-fork-url && cd solouchuva-hardware
 
 # Crie uma branch com suas alterações
 $ git checkout -b my-feature
