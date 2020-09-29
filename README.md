@@ -1,5 +1,3 @@
-**<p align="center">(Ainda em produção - NÃO FINALIZADO)</p>**
-
 <p align="center">
   <img src="https://raw.githubusercontent.com/georgaugusto/solouchuva/85adedbfe8c53a00d70f8e1ff746e8db709dfc8d/public/logoImg.svg" width="600px"/>
 </p>
