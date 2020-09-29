@@ -7,7 +7,6 @@
 <p align="center">
   <a href="#Descrição">Descrição</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#Preview">Preview</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#Tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#Requisitos">Requisitos</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#Como-contribuir">Como contribuir</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </p>
@@ -24,86 +23,65 @@
 </p>
 
 Para ver a **describe**, clique aqui: [SolouChuva Describe](https://github.com/georgaugusto/solouchuva)</br>
-Para ver a **web client**, clique aqui: [SolouChuva Web](https://github.com/georgaugusto/solouchuva-frontend)</br>
-Para ver a **hardware**, clique aqui: [SolouChuva Hardware](https://github.com/georgaugusto/solouchuva-hardware)
+Para ver a **api**, clique aqui: [SolouChuva Rest API](https://github.com/georgaugusto/solouchuva-backend)</br>
+Para ver a **web client**, clique aqui: [SolouChuva Web](https://github.com/georgaugusto/solouchuva-frontend)
 
 Para ver a **aplicação** rodando, clique aqui: [SolouChuva App](https://app.solouchuva.com.br/dashboard)
 
 ## Preview
 
-## Tecnologias
-
-**Back-End:**
-- [Node.js](https://nodejs.org/en/);
-- [TypeScript](https://www.typescriptlang.org/);
-- [Express](https://expressjs.com/pt-br/)
-- [Multer](https://github.com/expressjs/multer)
-- [TypeORM](https://typeorm.io/#/)
-- [JWT-token](https://jwt.io/)
-- [uuid v4](https://github.com/thenativeweb/uuidv4/)
-- [Firebase Realtime](https://firebase.google.com/)
-- [PostgreSQL](https://www.postgresql.org/)
-- [Date-fns](https://date-fns.org/)
-- [Babel](https://babeljs.io/)
-- [Jest](https://jestjs.io/)
-- [SuperTest](https://github.com/visionmedia/supertest)
-
-**Padronização de código:**
-- [Commitlint](https://github.com/conventional-changelog/commitlint)
-- [Commitizen](https://github.com/commitizen/cz-cli)
-- [Eslint](https://eslint.org/)
-- [Prettier](https://prettier.io/)
-- [EditorConfig](https://editorconfig.org/)
-
 ## Requisitos
 
-- [Node.js](https://nodejs.org/en/)
-- [Yarn](https://classic.yarnpkg.com/) ou [npm](https://www.npmjs.com/)
-- Um projeto no [Firebase](https://console.firebase.google.com/)
+- [IDE do Arduino](https://www.arduino.cc/)
+- Ter os componentes abaixo
 
-> Obs.: Recomendo o uso do docker pela facilidade
+**Componentes:**
+* ESP8266 NodeMcu ESP-12 (Amica)
+* Protobord 1660 Pontos
 
-**Clone o projeto e acesse a pasta**
+**Sensores:**
+- [x] Sensor DHT22 (Temperatura e umidade do ar)
+- [x] Sensor BMP280 (Temperatura, pressão e altitude)
+- [x] Sensor UVM-30A (Luz ultravioleta)
+- [x] Sensor BH1750 (Luminosidade)
+- [x] Sensor de Umidade do Solo Capacitivo
+- [x] Sensor Hall US1881/U18 (Para montar o Pluviometro e o Anemômetro)
+- [x] Sensor de dector de chuva (Para montar o sensor de molhamento foliar)
 
-```bash
-$ git clone https://github.com/georgaugusto/solouchuva-backend.git && cd solouchuva-backend
-```
+**Modulos:**
+- [x] Pluviometro de bascula digital (Sensor Hall US1881/U18 - Foi construido seguindo os passos do pessoal da [Pluvi.On](https://pluvion.com.br/) neste [link](https://www.instructables.com/id/Arduino-Modules-Rain-Sensor)) 
+- [ ] Indicador de direção do vento (Futuramente)
+- [x] Anemometro (Sensor Hall US1881/U18  - Foi adquirido pronto)
+- [x] Painel solar
+- [x] Bateria 3.7v 1200mah
+- [x] Lipo-Po Rider v1.3 (Módulo gerenciador de carga de baterias lítio que permite o gerenciamento de energia produzida por meio de painéis solares)
 
 **Siga os passos abaixo**
 
 ```bash
-# Instale as dependências
-$ yarn install
+# Instale todos os componentes igual ao esquemático abaixo
 
-# Faça uma cópia de '.env.example' para '.env' e defina com suas variáveis de ambiente.
-# As variáveis aws não precisam ser preenchidas para o ambiente dev
-$ cp .env.example .env
-
-# Caso ainda não tenha crie um Realtime Database no console do Firebase
-
-# Crie a instância do postgreSQL usando docker
-$ docker run --name postgres -e POSTGRES_USER=docker \
-              -e POSTGRES_DB -e POSTGRES_PASSWORD=docker \
-              -p 5432:5432 -d postgres
-
-# Crie a instância do mongoDB usando docker
-$ docker run --name mongodb -p 27017:27017 -d -t mongo
-
-# Crie a instância do redis usando docker
-$ docker run --name redis -p 6379:6379 -d -t redis:alpine
-
-# Faça uma cópia de 'ormconfig.example.json' para 'ormconfig.json'
-# e defina os valores, se não forem preenchidos, para conectar com contêineres de banco de dados do docker
-$ cp ormconfig.example.json ormconfig.json
-
-# Assim que os serviços estiverem em execução, execute as migrações
-$ yarn typeorm migration:run
-
-# Para terminar, execute o serviço api
-$ yarn dev:server
 ```
 
-> Obs.: Importe o arquivo `Insomnia.json` no aplicativo Insomnia, para facilitar o teste da api
+### Esquemático
+
+A figura abaixo ilustra a montagem em na protoboard dos componentes.
+
+![picture](https://raw.githubusercontent.com/georgaugusto/solouchuva/master/public/iot-monitoramento-meteorologico_fzz.png)
+
+**Clone o projeto e acesse a pasta**
+
+```bash
+$ git clone https://github.com/georgaugusto/solouchuva-hardware.git && cd solouchuva-hardware
+
+# Caso precise instalar alguma biblioteca acesse a pasta 'libraries'
+
+# Defina a rede Wi-fi e as variáveis do Firebase no arquivo 'iot-monitoramento-meteorologico.ino'
+
+# Carregue o arquivo 'iot-monitoramento-meteorologico.ino' dentro do NodeMcu
+
+# Muito bem, o projeto foi iniciado e tudo deve estar funcionando!
+```
 
 ## Como contribuir
 
