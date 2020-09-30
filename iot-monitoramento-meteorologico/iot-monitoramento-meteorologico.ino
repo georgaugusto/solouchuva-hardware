@@ -352,7 +352,7 @@ void publishReadings() {
 }
 
 void readSensorML8511() {
-   sensorValueML8511 = ads.readADC_SingleEnded(0); // Armazena o valor coletado da porta A0 do ADS1115
+  sensorValueML8511 = analogRead(A0); // Armazena o valor coletado da porta A0 do ADS1115
   sensorVoltageML8511 = ( sensorValueML8511 * 0.1875) / 1000;  // Armazena e calcula voltagem da porta com os valores dados do datasheet do ADS1115
   UvIndex = sensorVoltageML8511 * 100; // Armazena o resultado do valor do indice UV
 
@@ -754,7 +754,7 @@ void collectsMinMaxValues() {
   sensorRangeMFMax = map1( sensorValueMF, sensorMinMF, sensorMaxMF, 100, 0);  // Mapeia os valores coletados da voltagem entre 0 e 100
   sensorRangeMFMaxTime = timeClient.getFormattedTime();
 
-   sensorValueML8511 = ads.readADC_SingleEnded(0); // Armazena o valor coletado da porta A0 do ADS1115
+  sensorValueML8511 = analogRead(A0); // Armazena o valor coletado da porta A0 do ADS1115
   sensorVoltageML8511 = ( sensorValueML8511 * 0.1875) / 1000;  // Armazena e calcula voltagem da porta com os valores dados do datasheet do ADS1115
   UvIndexMin = sensorVoltageML8511 * 100; // Armazena o resultado do valor do indice UV
   UvIndexMinTime = timeClient.getFormattedTime();
