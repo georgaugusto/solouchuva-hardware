@@ -119,4 +119,4 @@ Este projeto está licenciado sob a Licença MIT - consulte a [LICENSE](LICENSE)
 
 > A aplicação foi desenvolvida durante a graduação em Análise e Desenvolvimento de Sistemas na [FEMA](https://www.fema.edu.br) e em conjunto com o GoStack 11.0, organizado pela [Rocketseat](https://rocketseat.com.br/).
 
-Feito com 💜 &nbsp;por Georg Augusto Schlegel 👋 &nbsp;[Mande um Aló](https://www.linkedin.com/in/georgaugusto/)
+Feito com 💜 &nbsp;por Georg Augusto Schlegel 👋 &nbsp;[Mande um Alô](https://www.linkedin.com/in/georgaugusto/)
